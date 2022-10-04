@@ -9,6 +9,7 @@ import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import Signup from "./component/signup";
 import LoginView from "./pages/LoginView";
+import Profile from "./pages/profile";
 
 //create your first component
 const Layout = () => {
@@ -25,7 +26,7 @@ const Layout = () => {
                         <Route element={<Home />} path="/" />
                         <Route element={<Signup/>} path="/signup" />
                         <Route element={<LoginView />} path="/login"/>                    
-                        <Route element={<h1>Not found!</h1>} />
+                        <Route element={<Profile />} path="/profile"/>
                     </Routes>
                     <Footer />
                 </ScrollToTop>

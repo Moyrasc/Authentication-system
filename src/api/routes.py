@@ -14,7 +14,7 @@ def signup():
     username = request.json.get("username")
     email = request.json.get("email")
     password = request.json.get("password")  
-    new_user = User(username = "username", email = "email", password = body ["password"])
+    new_user = User(username = username, email = email, password = password)
     db.session.add(new_user)
     db.session.commit()    
     return jsonify(new_user.serialize()), 200
@@ -23,7 +23,6 @@ def signup():
 def login():
     email = request.json.get("email")
     password = request.json.get("password")
-    
     user = User.query.filter_by(email=email, password=password).first()
     if user is None:
             return jsonify({"msg": "Bad username or password"}), 401

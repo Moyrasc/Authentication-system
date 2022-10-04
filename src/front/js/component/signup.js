@@ -1,13 +1,29 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 const Signup = () => {
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const {store, actions} = useContext(Context)
+  const navigate = useNavigate()
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+     if (username !== "" && email !=="" && password !=="") {
+       actions.createUser(username,email,password)
+       navigate("/login")
+      } else {
+        alert("Fill out all fields");
+    }
+  };
 
   return (
     <>
-      <form className="register">
+    <div className="d-flex justify-content-center text-center mt-5 align-items-center">
+      <p className="d-flex justify-content-center"></p>
+      <form onSubmit={handleSubmit}>
         <div className="mb-3 row">
           <label
             htmlFor="exampleFormControlInput1"
@@ -44,7 +60,7 @@ const Signup = () => {
             />
           </div>
         </div>
-        <div class="mb-3 row">
+        <div className="mb-3 row">
           <label htmlFor="inputPassword" className="col-sm-4 col-form-label">
             Password
           </label>
@@ -59,11 +75,12 @@ const Signup = () => {
           </div>
         </div>
         <div className="col-12">
-          <button className="btn btn-primary" type="submit">
+          <button className="btn btn-primary" type="submit" onSubmit = {()=>actions.createUser}>
             Signup
           </button>
         </div>
       </form>
+      </div>
     </>
   );
 };

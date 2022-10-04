@@ -1,13 +1,16 @@
 import React from "react";
 import "../../styles/home.css";
-import Signup from "../component/signup";
+import rigoImageUrl from "../../img/rigo-baby.jpg";
 
 export const Home = () => {
   return (
-    <div className="d-flex justify-content-center text-center mt-5 align-items-center">
-      <p className="d-flex justify-content-center">
-        <Signup />
+    <div className="text-center mt-5">
+     
+      <p>
+        <img src={rigoImageUrl} />
       </p>
+
+      <h1>Please login or register if you don't have account</h1>
     </div>
   );
 };
