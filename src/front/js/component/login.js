@@ -4,7 +4,7 @@ const Login = () => {
     return (
         <form className="">
             <div className="mb-3 row">
-                <label for="exampleFormControlInput1" className=" col-sm-4 col-form-label">
+                <label htmlFor="exampleFormControlInput1" className=" col-sm-4 col-form-label">
                     Email
                 </label>
                 <div className="col-md-8">
@@ -14,7 +14,7 @@ const Login = () => {
                 </div>
             </div>
             <div class="mb-3 row">
-                <label for="inputPassword" className="col-sm-4 col-form-label">
+                <label htmlFor="inputPassword" className="col-sm-4 col-form-label">
                     Password
                 </label>
                 <div className="col-md-8">
