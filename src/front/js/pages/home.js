@@ -10,9 +10,7 @@ export const Home = () => {
 	return (
 		<div className="text-center mt-5">
 			
-			<p className="d-flex justify-content-center">
-				<Login/>
-			</p>
+			
 			<div className="alert alert-info">
 				{store.message || "Loading message from the backend (make sure your python backend is running)..."}
 			</div>
